@@ -16,4 +16,11 @@
  $router->add('posts', ['controller' => 'Posts', 'method' => 'index']);
  $router->add('posts/new', ['controller' => 'Posts', 'method' => 'new']);
 
- echo '<pre>', print_r($router->getRoutes());
+ //echo '<pre>', print_r($router->getRoutes());
+
+ $url = $_SERVER['QUERY_STRING'];
+ if($router->match($url)){
+    echo '<pre>', print_r($router->getParams());
+ }else{
+     echo $url . ' Not Found';
+ }
