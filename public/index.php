@@ -1,4 +1,9 @@
 <?php 
 
+/**
+ * 
+ *  Front Controller
+ * 
+ */
 
-echo 'Hola';
+ echo "Requested Query = " . $_SERVER['QUERY_STRING'];
