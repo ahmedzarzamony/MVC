@@ -21,12 +21,12 @@ spl_autoload_register(function($class){
  $router = new Core\Router();
  //echo get_class($router);
 
- $router->add('', ['controller' => 'Home', 'method' => 'index']);
- $router->add('posts', ['controller' => 'Posts', 'method' => 'index']);
- $router->add('posts/new', ['controller' => 'Posts', 'method' => 'new']);
- $router->add('{controller}/{action}');
+ $router->add('', ['controller' => 'Home', 'action' => 'index']);
+ $router->add('posts', ['controller' => 'Posts', 'action' => 'index']);
+ $router->add('posts/new', ['controller' => 'Posts', 'action' => 'new']);
+ //$router->add('{controller}/{action}');
  //$router->add('admin/{action}{controller}');
- $router->add('{controller}/{id:\d+}/{action}');
+ //$router->add('{controller}/{id:\d+}/{action}');
  //echo '<pre>', print_r($router->getRoutes());
 
  /*
