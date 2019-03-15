@@ -7,7 +7,12 @@
     <title>Home</title>
 </head>
 <body>
-<h3>Welcome</h3>
-    Hi from Home view.
+    <h3>Welcome <?= htmlspecialchars($name) ?></h3>
+    <h4>Favourte Colors:</h4>
+    <?php 
+        foreach($colors as $color){
+            echo '<li>' .$color. '</li>';
+        }
+    ?>
 </body>
 </html>
