@@ -63,12 +63,11 @@ class Router
     {
         $url = $this->removeQueryStringVariables($url);
         if($this->match($url)){
-            print_r($this->params);die;
             $controller = $this->params['controller'];
             $controller = $this->convertToStudlyCaps($this->params['controller']);
             $controller = "App\Controllers\\$controller";
             if(class_exists($controller)){
-                $controller_object = new $controller();
+                $controller_object = new $controller($this->params);
 
                 $action = $this->params['action'];
                 $action = $this->convertToCamelCase($this->params['action']);

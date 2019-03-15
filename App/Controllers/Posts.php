@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Posts
+class Posts extends \Core\Controller
 {
     public function index()
     {
@@ -13,5 +13,10 @@ class Posts
     public function addNew()
     {
         echo "Posts - add New";
+    }
+
+    public function edit()
+    {
+        echo '<pre>', print_r($this->route_params, 1);
     }
 }

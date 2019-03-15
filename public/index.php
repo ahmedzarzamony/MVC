@@ -26,7 +26,7 @@ spl_autoload_register(function($class){
  $router->add('posts/new', ['controller' => 'Posts', 'method' => 'new']);
  $router->add('{controller}/{action}');
  //$router->add('admin/{action}{controller}');
- //$router->add('{controller}/{id:\d+}/{action}');
+ $router->add('{controller}/{id:\d+}/{action}');
  //echo '<pre>', print_r($router->getRoutes());
 
  /*
