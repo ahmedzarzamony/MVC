@@ -7,6 +7,7 @@
  * echo "Requested Query = " . $_SERVER['QUERY_STRING'];
  */
 
+ require '../App/Controllers/Posts.php';
  require '../Core/Router.php';
 
  $router = new Router();
@@ -20,6 +21,7 @@
  $router->add('{controller}/{id:\d+}/{action}');
  //echo '<pre>', print_r($router->getRoutes());
 
+ /*
  $url = $_SERVER['QUERY_STRING'];
  if($router->match($url)){
     echo '<pre>', htmlspecialchars(print_r($router->getRoutes(), 1));
@@ -27,3 +29,5 @@
  }else{
      echo $url . ' Not Found';
  }
+ */
+$router->dispatch($_SERVER['QUERY_STRING']);
