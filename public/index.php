@@ -7,10 +7,18 @@
  * echo "Requested Query = " . $_SERVER['QUERY_STRING'];
  */
 
- require '../App/Controllers/Posts.php';
- require '../Core/Router.php';
+ //require '../App/Controllers/Posts.php';
+ //require '../Core/Router.php';
 
- $router = new Router();
+spl_autoload_register(function($class){
+    $root = dirname(__DIR__);
+    $file = $root . '/' . str_replace('\\', '/', $class) . '.php';
+    if(is_readable($file)){
+        require $file;
+    }
+});
+
+ $router = new Core\Router();
  //echo get_class($router);
 
  $router->add('', ['controller' => 'Home', 'method' => 'index']);

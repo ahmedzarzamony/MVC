@@ -1,5 +1,7 @@
 <?php 
 
+namespace Core;
+
 class Router
 {
     protected $routes = [];
@@ -62,11 +64,12 @@ class Router
         if($this->match($url)){
             $controller = $this->params['controller'];
             $controller = $this->convertToStudlyCaps($this->params['controller']);
+            $controller = "App\Controllers\\$controller";
             if(class_exists($controller)){
                 $controller_object = new $controller();
 
-                $action = $this->params['action'];
-                $action = $this->convertToCamelCase($this->params['action']);
+                $action = $this->params['method'];
+                $action = $this->convertToCamelCase($this->params['method']);
 
                 if(is_callable([$controller_object, $action])){
                     $controller_object->$action();
