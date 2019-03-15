@@ -1,6 +1,7 @@
 <?php 
 
 namespace App\Controllers;
+use \Core\View;
 
 class Home extends \Core\Controller
 {
@@ -16,6 +17,6 @@ class Home extends \Core\Controller
 
     public function indexAction()
     {
-        echo "Home - index";
+        View::render('Home/index.php');
     }
 }
