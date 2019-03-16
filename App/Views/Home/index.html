@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+{% block body %}
+    <h3>Welcome {{ name }}</h3>
+    <h4>Favourte Colors:</h4>
+    {% for color in colors%}
+        <li>{{ color }}</li>
+    {% endfor %}
+{% endblock %}
